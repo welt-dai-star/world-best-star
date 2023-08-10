@@ -29,7 +29,7 @@ export interface EpisodeUnit {
     seFileName?: string; // 音效文件名
     windowEffect?: 1; // 窗口效果
     sceneCameraMasterId?: number; // 未知内容
-    VoiceFileName?: string; // 语音文件名
+    voiceFileName?: string; // 语音文件名
     // 角色相关
     characterMotions: CharacterMotion[]; // 角色动作
     speakerIconId?: string; // 发言人头像编号
@@ -37,11 +37,11 @@ export interface EpisodeUnit {
 
 export interface CharacterMotion {
     slotNumber: number; // 角色编号
-    facialExpressionMasterId: number; // 表情编号
-    headMotionMasterId: number; // 头部动作编号
-    headDirectionMasterId: number; // 头部方向编号
-    bodyMotionMasterId: number; // 身体动作编号
-    lipSyncMasterId: number; // 唇形同步编号
+    facialExpressionMasterId?: number; // 表情编号
+    headMotionMasterId?: number; // 头部动作编号
+    headDirectionMasterId?: number; // 头部方向编号
+    bodyMotionMasterId?: number; // 身体动作编号
+    lipSyncMasterId?: number; // 唇形同步编号
     spineId: number; // spine编号
     characterAppearanceType: number; // 角色出现方式
     characterPosition: "Center" | "InnerLeft" | "InnerRight"; // 角色位置
