@@ -14,6 +14,6 @@ A图层在B之上，A淡出，B始终不透明，仅有`value1`一个参数
 详见[characterMotion](./CharacterMotion.md)
 
 ## `speakerIconId`
-三位数，由`组织序号 + 0 + 个人序号`组成，具体作用未知
+三位数，由`组织序号 + 0 + 个人序号`组成，体现在dialog里面
 
 e.g. `大黑`的编号为`202`，`潘达`的编号为`104`

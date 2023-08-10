@@ -5,7 +5,7 @@
 可以理解为`index`，如果前一`characterMotion`存在的`slot`在此没有，则直接清除该`slot`
 
 ## `facialExpressionMasterId`
-spine里面有三部分相关内容`cheek`，`eye`和`eyeblow`，猜测是状态压缩
+spine里面有三部分相关内容`cheek`，`eye`和`eyebrow`，猜测是状态压缩
 ```
 关于具体数值对应的表情还没有确定，不过"0"应该对应"normal"，需要根据演出或者其他内容再次确定
 ```
@@ -58,9 +58,10 @@ spine里面有三部分相关内容`cheek`，`eye`和`eyeblow`，猜测是状态
 - sad
 - shy
 - think
-- unique...(应该很多，女仆iroha/40106有21个unique)
-total: 7 + unique
+- unique1~unique21
+total: 7 + 21 == 28
 ## `lipSyncMasterId`
+loop动画，在语音播放结束 || 结束当前对话时停止播放
 - angry
 - angry_anime
 - happy
