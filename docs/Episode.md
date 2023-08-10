@@ -59,6 +59,6 @@ export interface CharacterMotion {
     characterAppearanceType: number; // 角色出现方式
     characterPosition: "Center" | "InnerLeft" | "InnerRight"; // 角色位置
     characterLayerType: "Layer1"; // 角色层级
-    spineSize: string; // spine大小
+    spineSize: "Middle"; // spine大小
 }
 ```
