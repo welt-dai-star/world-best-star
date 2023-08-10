@@ -25,3 +25,6 @@ dist-ssr
 
 # remote assets
 src/assets/remote
+
+# local test
+docs/local
