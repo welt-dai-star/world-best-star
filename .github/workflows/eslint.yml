@@ -1,39 +1,47 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-# ESLint is a tool for identifying and reporting on patterns
-# found in ECMAScript/JavaScript code.
-# More details at https://github.com/eslint/eslint
-# and https://eslint.org
+name: Format and Lint Code
 
-name: ESLint
-
-on:
-  push:
-  pull_request:
-  schedule:
-    - cron: '00 18 * * 1'
+on: push
 
 jobs:
-  eslint:
-    name: Run eslint scanning
+  format_and_lint:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      security-events: write
-      actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Install ESLint
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install node modules
+        run: pnpm install
+      - name: Config git
         run: |
-          npm install eslint@8.10.0
-
-      - name: Run ESLint
-        run: npx eslint .
-          --config .eslintrc.json
-          --ext .ts,.vue
-        continue-on-error: true
-        
+          git config user.name 'github-actions'
+          git config user.email 'github-actions@github.com'
+      - name: Commit and push
+        run: |
+          if [[ -n $(git status --porcelain) ]]
+          then
+            git add .
+            git commit -m 'chore: format code'
+            git push
+          else
+            echo "Nothing to commit."
+          fi
+      - name: ESLint Check
+        id: check-code
+        run: |
+          check_output=$(pnpm run --silent check || :)
+          check_failed=$([[ -z "$check_output" ]] && echo 'false' || echo 'true')
+          check_output=$(echo -e "\`\`\`${check_output}\n\`\`\`")
+          check_output="${check_output//'%'/'%25'}"
+          check_output="${check_output//$'\n'/'%0A'}"
+          check_output="${check_output//$'\r'/'%0D'}"
+          echo check_output="$check_output" >> $GITHUB_OUTPUT
+          echo check_failed="$check_failed" >> $GITHUB_OUTPUT
+#      - name: Comment if check failed
+#        uses: peter-evans/commit-comment@v2
+#        if: ${{ 'true' == steps.check-code.outputs.check_failed }}
+#        with:
+#          body: ${{ steps.check-code.outputs.check_output }}
+      - name: Error if check failed
+        if: ${{ 'true' == steps.check-code.outputs.check_failed }}
+        run: exit -1
