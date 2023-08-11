@@ -4,7 +4,7 @@
     </n-layout-header>
 </template>
 <script setup lang="ts">
-import { NLayoutHeader } from 'naive-ui';
+import { NLayoutHeader } from "naive-ui";
 </script>
 <style scoped lang="scss">
 .title {

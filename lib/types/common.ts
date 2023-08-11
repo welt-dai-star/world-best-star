@@ -1,3 +1,19 @@
+
+
+export interface CharacterMotion {
+    slotNumber: number; // 角色编号
+    facialExpressionMasterId?: number; // 表情编号
+    headMotionMasterId?: number; // 头部动作编号
+    headDirectionMasterId?: number; // 头部方向编号
+    bodyMotionMasterId?: number; // 身体动作编号
+    lipSyncMasterId?: number; // 唇形同步编号
+    spineId: number; // spine编号
+    characterAppearanceType: number; // 角色出现方式
+    characterPosition: "Center" | "InnerLeft" | "InnerRight"; // 角色位置
+    characterLayerType: "Layer1"; // 角色层级
+    spineSize: string; // spine大小
+}
+
 /**
  * @file common.ts 公共类型定义
  */
@@ -33,18 +49,4 @@ export interface EpisodeUnit {
     // 角色相关
     characterMotions: CharacterMotion[]; // 角色动作
     speakerIconId?: string; // 发言人头像编号
-}
-
-export interface CharacterMotion {
-    slotNumber: number; // 角色编号
-    facialExpressionMasterId?: number; // 表情编号
-    headMotionMasterId?: number; // 头部动作编号
-    headDirectionMasterId?: number; // 头部方向编号
-    bodyMotionMasterId?: number; // 身体动作编号
-    lipSyncMasterId?: number; // 唇形同步编号
-    spineId: number; // spine编号
-    characterAppearanceType: number; // 角色出现方式
-    characterPosition: "Center" | "InnerLeft" | "InnerRight"; // 角色位置
-    characterLayerType: "Layer1"; // 角色层级
-    spineSize: string; // spine大小
 }
