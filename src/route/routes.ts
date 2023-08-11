@@ -77,7 +77,7 @@ const routes: RouteRecordRaw[] = [
   {
     path:"/:pathMatch(.*)*", // 404
     component: () => import("../components/UnfoundPage.vue"),
-  }
+  },
 ];
 
 const routerConvert = createRouter({

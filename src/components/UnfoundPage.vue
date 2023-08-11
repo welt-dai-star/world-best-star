@@ -6,5 +6,5 @@
     </n-result>
   </template>
 <script setup lang="ts">
-import { NResult, NButton } from "naive-ui";
+import { NButton, NResult } from "naive-ui";
 </script>

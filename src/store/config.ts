@@ -5,7 +5,7 @@ export const useConfigStore = defineStore({
   id: "config",
   state: () => ({
     language: "chs" as "chs" | "cht" | "eng" | "jpn",
-    page:"/"
+    page:"/",
   }),
   getters: {
     getLanguage(): "chs" | "cht" | "eng" | "jpn" {
@@ -13,7 +13,7 @@ export const useConfigStore = defineStore({
     },
     getPage(): string {
       return this.page;
-    }
+    },
   },
   actions: {
     setLanguage(language: string) {
@@ -24,6 +24,6 @@ export const useConfigStore = defineStore({
     },
     setPage(page: string) {
       this.page = page;
-    }
+    },
   },
 });
