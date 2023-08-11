@@ -1,9 +1,12 @@
 <template>
-  <n-menu :options="menuOptions" class="menu" default-expand-all></n-menu>
+  <n-config-provider :theme-overrides="themeOverrides">
+    <n-menu :options="menuOptions" class="menu" default-expand-all></n-menu>
+  </n-config-provider>
 </template>
 <script setup lang="ts">
 import { MenuOption } from "naive-ui";
 import { NMenu } from "naive-ui";
+import { GlobalThemeOverrides, NConfigProvider } from "naive-ui";
 const menuOptions: MenuOption[] = [
   {
     label: "主页",
@@ -87,6 +90,11 @@ const menuOptions: MenuOption[] = [
     ],
   },
 ];
+const themeOverrides: GlobalThemeOverrides = {
+  common: {
+    primaryColor: "#66ccff",
+  },
+};
 </script>
 <style lang="scss" scoped>
 .menu {

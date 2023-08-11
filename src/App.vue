@@ -3,6 +3,7 @@
     <navi-bar></navi-bar>
     <n-layout position="absolute" style="top: 64px;" has-sider>
       <n-layout-sider 
+        id="menu"
         content-style="padding: 24px;" 
         :native-scrollbar="false" 
         collapse-mode="width" 
@@ -11,6 +12,7 @@
         <menu-item></menu-item>
       </n-layout-sider>
       <n-layout content-style="padding: 24px;" :native-scrollbar="false">
+        <n-image src="/40103.png"></n-image>
         <n-h2>功能开发中，敬请期待～</n-h2>
         <n-layout-footer position="absolute" style="height: 64px; padding: 24px" bordered>
           Develop by ShinonomeSetsuna & Hanane.
@@ -24,11 +26,19 @@
 <script setup lang="ts">
 import NaviBar from "./components/NavigationBar.vue";
 import MenuItem from "./components/MenuItem.vue";
-import { NH2, NLayout, NLayoutFooter, NLayoutSider } from "naive-ui";
+import { NH2, NImage, NLayout, NLayoutFooter, NLayoutSider } from "naive-ui";
 </script>
 <style scoped lang="scss">
 .full-screen {
   height: 100vh;
   width: 100%;
+}
+#menu {
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  #menu {
+    display: none;
+  }
 }
 </style>
