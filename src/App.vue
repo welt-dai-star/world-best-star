@@ -1,30 +1,30 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
-</template>
+  <n-layout class="full-screen">
+    <navi-bar></navi-bar>
+    <n-layout position="absolute" style="top: 64px;" has-sider>
+      <n-layout-sider content-style="padding: 24px;" :native-scrollbar="false" collapse-mode="width" :collapsed-width="0"
+        show-trigger="arrow-circle" bordered>
+        <menu-item></menu-item>
+      </n-layout-sider>
+      <n-layout content-style="padding: 24px;" :native-scrollbar="false">
+        <n-h2>功能开发中，敬请期待～</n-h2>
+        <n-layout-footer position="absolute" style="height: 64px; padding: 24px" bordered>
+          Develop by ShinonomeSetsuna & Hanane.
+        </n-layout-footer>
+      </n-layout>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+    </n-layout>
+
+  </n-layout>
+</template>
+<script setup lang="ts">
+import NaviBar from './components/NavigationBar.vue';
+import MenuItem from './components/MenuItem.vue'
+import { NLayout, NLayoutSider, NLayoutFooter, NH2, } from 'naive-ui';
+</script>
+<style scoped lang="scss">
+.full-screen {
+  height: 100vh;
+  width: 100%;
 }
 </style>

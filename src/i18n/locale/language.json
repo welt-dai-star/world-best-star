@@ -1,0 +1,15 @@
+{
+    "chs":{
+        "welcome":"欢迎！",
+        "title":"标题"
+    },
+    "cht":{
+        "welcome":"欢迎！"
+    },
+    "eng":{
+        "welcome":"Welcome!"
+    },
+    "jpn":{
+        "welcome":"This is Japanese."
+    }
+}
