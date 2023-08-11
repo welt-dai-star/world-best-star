@@ -1,4 +1,4 @@
-import { RouteRecordRaw, createRouter, createWebHistory } from "vue-router";
+import { RouteRecordRaw, createRouter, createWebHashHistory } from "vue-router";
 
 
 const routes: RouteRecordRaw[] = [
@@ -81,7 +81,7 @@ const routes: RouteRecordRaw[] = [
 ];
 
 const routerConvert = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: routes,
 });
 
