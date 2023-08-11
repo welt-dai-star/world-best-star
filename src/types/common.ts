@@ -1,5 +1,3 @@
-
-
 export interface CharacterMotion {
     slotNumber: number; // 角色编号
     facialExpressionMasterId?: number; // 表情编号
@@ -14,13 +12,28 @@ export interface CharacterMotion {
     spineSize: string; // spine大小
 }
 
-/**
- * @file common.ts 公共类型定义
- */
-/**
- * @interface EpisodeUnit 剧本unit类型
- */
-export interface EpisodeUnit {
+
+export interface EpisodeUnit extends RawEpisodeUnit {
+// 
+speakerNameCHS?: string; // 发言人中文名
+speakerNameCHT?: string; // 发言人繁体名
+speakerNameENG?: string; // 发言人英文名
+speakerNameJPN?: string; // 发言人日文名
+speakerNameKOR?: string; // 发言人韩文名
+// 以下为自定义翻译内容
+translationCHS?: string; // 中文翻译
+translationCHT?: string; // 繁体翻译
+translationENG?: string; // 英文翻译
+translationJPN?: string; // 日文翻译
+translationKOR?: string; // 韩文翻译
+// 以下为翻译者相关
+translater?: string; // 翻译者
+checker?: string; // 校对者
+checked?: boolean; // 是否已校对
+}
+
+
+export interface RawEpisodeUnit {
     // 以下为unit的基本属性
     // id相关内容
     id: number; // 每个unit的唯一标识 == episodeMasterId + groupOrder（三位数含前导零）
@@ -31,16 +44,6 @@ export interface EpisodeUnit {
     speakerName: string; // 发言人
     fontSize: "Middle"; // 字体大小，目前只有Middle
     phrase: string; // 剧本内容
-    // 以下为自定义翻译内容，源文件没有
-    translationCHS?: string; // 中文翻译
-    translationCHT?: string; // 繁体翻译
-    translationENG?: string; // 英文翻译
-    translationJPN?: string; // 日文翻译
-    translationKOR?: string; // 韩文翻译
-    // 以下为翻译者相关
-    translater?: string; // 翻译者
-    checker?: string; // 校对者
-    checked?: boolean; // 是否已校对
     // 以下为unit的扩展属性，可以为空，脚本原有内容
     // 背景相关
     backgroundCharacterImageFileName?: string; // 背景角色图片文件名

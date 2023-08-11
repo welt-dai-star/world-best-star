@@ -56,7 +56,7 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: "/story_viewer",
-    component: () => import("../components/EpisodePlayer/EpisodePlayerApp.vue"),
+    component: () => import("../Apps/EpisodePlayer/EpisodePlayerApp.vue"),
   },
   {
     path:"/l2d_viewer",
