@@ -31,8 +31,17 @@ export interface EpisodeUnit {
     speakerName: string; // 发言人
     fontSize: "Middle"; // 字体大小，目前只有Middle
     phrase: string; // 剧本内容
-
-    // 以下为unit的扩展属性，可以为空
+    // 以下为自定义翻译内容，源文件没有
+    translationCHS?: string; // 中文翻译
+    translationCHT?: string; // 繁体翻译
+    translationENG?: string; // 英文翻译
+    translationJPN?: string; // 日文翻译
+    translationKOR?: string; // 韩文翻译
+    // 以下为翻译者相关
+    translater?: string; // 翻译者
+    checker?: string; // 校对者
+    checked?: boolean; // 是否已校对
+    // 以下为unit的扩展属性，可以为空，脚本原有内容
     // 背景相关
     backgroundCharacterImageFileName?: string; // 背景角色图片文件名
     backgroundImageFileName?: string; // 背景图片文件名

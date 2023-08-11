@@ -2,31 +2,20 @@
   <n-layout class="full-screen">
     <navi-bar></navi-bar>
     <n-layout position="absolute" style="top: 64px;" has-sider>
-      <n-layout-sider 
-        id="menu"
-        content-style="padding: 24px;" 
-        :native-scrollbar="false" 
-        collapse-mode="width" 
-        :collapsed-width="0"
-        show-trigger="arrow-circle" bordered>
-        <menu-item></menu-item>
-      </n-layout-sider>
+      <menu-item></menu-item>
       <n-layout content-style="padding: 24px;" :native-scrollbar="false">
-        <n-image src="/40103.png"></n-image>
-        <n-h2>功能开发中，敬请期待～</n-h2>
-        <n-layout-footer position="absolute" style="height: 64px; padding: 24px" bordered>
-          Develop by ShinonomeSetsuna & Hanane.
-        </n-layout-footer>
+        <router-view></router-view>
+        <footer-info></footer-info>
       </n-layout>
-
     </n-layout>
-
   </n-layout>
 </template>
 <script setup lang="ts">
 import NaviBar from "./components/NavigationBar.vue";
 import MenuItem from "./components/MenuItem.vue";
-import { NH2, NImage, NLayout, NLayoutFooter, NLayoutSider } from "naive-ui";
+import FooterInfo from "./components/FooterInfo.vue";
+import {NLayout} from "naive-ui";
+import {RouterView} from "vue-router";
 </script>
 <style scoped lang="scss">
 .full-screen {
