@@ -24,7 +24,7 @@ dist-ssr
 *.sw?
 
 # remote assets
-src/assets/remote
+public/cdn
 
 # local test
 docs/local
