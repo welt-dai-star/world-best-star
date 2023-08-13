@@ -28,5 +28,5 @@ export const loadSpine = () => {
   mito.scale.set(0.5);
   app.stage.addChild(mito);
   mito.state.setAnimation(0, "breath", true);
-  mito.state.setAnimation(1, "body/unique1", false);
+  mito.state.setAnimation(1, "body/sad", false);
 };

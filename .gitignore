@@ -25,6 +25,7 @@ dist-ssr
 
 # remote assets
 public/cdn
+cdn
 
 # local test
 docs/local
