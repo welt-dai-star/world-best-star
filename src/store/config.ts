@@ -10,9 +10,6 @@ export const useConfigStore = defineStore({
     exampleStart: true,
   }),
   getters: {
-    getBaseUrl(): string {
-      return this.cdn;
-    },
     getLanguage(): "chs" | "cht" | "eng" | "jpn" {
       return this.language;
     },
@@ -21,6 +18,9 @@ export const useConfigStore = defineStore({
     },
     getExampleState(): boolean {
       return this.exampleStart;
+    },
+    getBaseUrl(): string {
+      return this.cdn;
     },
   },
   actions: {
@@ -35,6 +35,9 @@ export const useConfigStore = defineStore({
     },
     getSpineUrlById(spineId:string) :string{
       return `${this.cdn}/CharacterStands/${spineId}.skel`;
+    },
+    getEpisodeUrlById(EpisodeId:string): string{
+      return `${this.cdn}/episode/${EpisodeId}.json`;
     },
   },
 });
