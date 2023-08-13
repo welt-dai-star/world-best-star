@@ -7,6 +7,7 @@ export const useConfigStore = defineStore({
     cdn:"https://wds-1309483543.cos.ap-beijing.myqcloud.com/cdn",
     language: "chs" as "chs" | "cht" | "eng" | "jpn",
     page:"/",
+    exampleStart: true,
   }),
   getters: {
     getBaseUrl(): string {
@@ -18,8 +19,8 @@ export const useConfigStore = defineStore({
     getPage(): string {
       return this.page;
     },
-    getSpineFileUrl(): string {
-      return `${this.cdn}/CharacterStands`;
+    getExampleState(): boolean {
+      return this.exampleStart;
     },
   },
   actions: {
@@ -31,6 +32,9 @@ export const useConfigStore = defineStore({
     },
     setPage(page: string) {
       this.page = page;
+    },
+    getSpineUrlById(spineId:string) :string{
+      return `${this.cdn}/CharacterStands/${spineId}.skel`;
     },
   },
 });

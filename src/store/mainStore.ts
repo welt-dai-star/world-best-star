@@ -60,7 +60,7 @@ const characterMotionExcel = {
 };
 
 
-export const usingMainStore = defineStore({
+export const useMainStore = defineStore({
   id: "mainStore",
   state: () => ({
     motions: characterMotionExcel,
