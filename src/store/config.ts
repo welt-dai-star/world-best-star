@@ -9,11 +9,17 @@ export const useConfigStore = defineStore({
     page:"/",
   }),
   getters: {
+    getBaseUrl(): string {
+      return this.cdn;
+    },
     getLanguage(): "chs" | "cht" | "eng" | "jpn" {
       return this.language;
     },
     getPage(): string {
       return this.page;
+    },
+    getSpineFileUrl(): string {
+      return `${this.cdn}/CharacterStands`;
     },
   },
   actions: {

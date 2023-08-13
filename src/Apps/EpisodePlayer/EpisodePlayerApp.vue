@@ -3,7 +3,7 @@
     <spine-layer></spine-layer> 
 </template>
 <script setup lang="ts">
-import SpineLayer from "./layers/SpineLayer.vue";
+import SpineLayer from "./layers/SpineLayer/SpineLayer.vue";
 </script>
 <style scoped lang="scss">
     #story_player {
