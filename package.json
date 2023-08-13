@@ -8,7 +8,8 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "check": "eslint --ignore-path .gitignore --fix --config ./.eslintrc.json . --ext .js,.ts,.vue && vue-tsc --noEmit",
-    "lint": "eslint --ext .ts,.vue --ignore-path .gitignore --fix ."
+    "lint": "eslint --ext .ts,.vue --ignore-path .gitignore --fix .",
+    "publish":"git clone https://github.com/welt-dai-star/welt-dai-star.github.io.git && mkdir dist/.git && cp -r welt-dai-star.github.io/.git dist && rm -rf welt-dai-star.github.io && cd dist && git add . && git commit -m 'update' && git push"
   },
   "dependencies": {
     "naive-ui": "^2.34.4",

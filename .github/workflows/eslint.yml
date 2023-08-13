@@ -45,12 +45,3 @@ jobs:
       - name: Error if check failed
         if: ${{ 'true' == steps.check-code.outputs.check_failed }}
         run: exit -1
-
-      - name: Publish to Github Pages
-        run: |
-          git clone https://github.com/welt-dai-star/welt-dai-star.github.io.git
-          cp -r welt-dai-star.github.io/.git dist
-          rm -rf welt-dai-star.github.io
-          cd dist
-          git add . 
-          git commit -m 'update'
