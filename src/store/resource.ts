@@ -36,7 +36,7 @@ export const useResourceStore = defineStore({
     },
     allAnimeFinished(state) {
       return state.startedAnime === state.finishedAnime;
-    }
+    },
   },
   actions: {
     // set status

@@ -1,6 +1,6 @@
 import {CharacterMotion, EpisodeUnit} from "../../../types/common";
 import { useResourceStore } from "../../../store/resource";
-import * as PIXI from "pixi.js"
+import * as PIXI from "pixi.js";
 import { BackgroundHandle } from "./backgroundLayer";
 export class EpisodeParser {
   constructor(episode: EpisodeUnit[]) {
@@ -54,6 +54,8 @@ export class EpisodeParser {
   }
 }
 
+export const app = init();
+
 export function init() {
   const application = new PIXI.Application({
     width: window.innerWidth * window.devicePixelRatio,
@@ -65,5 +67,3 @@ export function init() {
   document.getElementById("spine_layer")!.appendChild(application.view);
   return application;
 }
-
-export const app = init();

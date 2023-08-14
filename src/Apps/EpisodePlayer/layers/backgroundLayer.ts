@@ -19,6 +19,9 @@ export function BackgroundHandle(
     console.log(backBG.width, backBG.height);
     const Factor = (deltaTime: number) => {
       return deltaTime * 0.06;
+    };
+    if (backgroundImageFileFadeType === -1) {
+      console.log(fadeValue1, fadeValue2, fadeValue3);
     }
     if (backgroundImageFileFadeType === 4) {
       // 前一张图片alpha渐变到0，后一张图片alpha一直为1
@@ -26,7 +29,7 @@ export function BackgroundHandle(
       const alphaFilter = new PIXI.filters.AlphaFilter();
       frontBG.filters = [alphaFilter];
       let lastTime = new Date().getTime();
-      let begin = new Date().getTime();
+      const begin = new Date().getTime();
       let deltaTime = 0;
       const loop = () => {
         const now = new Date().getTime();
@@ -40,7 +43,7 @@ export function BackgroundHandle(
           console.log(`Background Changed && index: ${app.stage.getChildIndex(backBG)}`);
           console.log("total: ", new Date().getTime() - begin);
         }
-      }
+      };
       requestAnimationFrame(loop);
     }
   }
