@@ -3,7 +3,7 @@
         v-if="configStore.getExampleState" 
         :on-click="loadSpine" 
         :disabled="!resourceStore.allMissionFinished">加载Spine</n-button>
-    <div id="spine_layer"></div>
+    <div id="spine_layer" style=""></div>
 </template>
 <script setup lang="ts">
 import { NButton } from "naive-ui";

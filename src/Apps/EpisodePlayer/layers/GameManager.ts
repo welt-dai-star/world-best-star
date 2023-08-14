@@ -1,13 +1,14 @@
 import {CharacterMotion, EpisodeUnit} from "../../../types/common";
 import { useResourceStore } from "../../../store/resource";
-
+import * as PIXI from "pixi.js"
+import { BackgroundHandle } from "./backgroundLayer";
 export class EpisodeParser {
   constructor(episode: EpisodeUnit[]) {
     this.episode = episode;
     this.nowPlaying = 0;
     this.SpineHandle = ()=> {};
     this.TextHandle = ()=> {};
-    this.BackgroundHandle = ()=>{};
+    this.BackgroundHandle = BackgroundHandle;
     this.BGMHandle = ()=>{};
     this.SEHandle = ()=>{};
     this.VoiceHandle = ()=>{};
@@ -52,3 +53,17 @@ export class EpisodeParser {
     }
   }
 }
+
+export function init() {
+  const application = new PIXI.Application({
+    width: window.innerWidth * window.devicePixelRatio,
+    height: window.innerHeight * window.devicePixelRatio,
+    backgroundColor: 0x00ff00,
+  });
+  application.view.style.width = `${window.innerWidth * 0.7}px`;
+  application.view.style.height = `${window.innerHeight * 0.7}px`;
+  document.getElementById("spine_layer")!.appendChild(application.view);
+  return application;
+}
+
+export const app = init();
