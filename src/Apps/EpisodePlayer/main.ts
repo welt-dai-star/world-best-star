@@ -39,10 +39,10 @@ function appInit() {
   return application;
 }
 
+export const app = init();
+
 export function init() {
   const application = appInit();
   layerInit(application);
   return application;
 }
-
-export const app = init();

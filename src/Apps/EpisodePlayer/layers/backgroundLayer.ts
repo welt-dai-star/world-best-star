@@ -69,7 +69,7 @@ export function BackgroundHandle(
             requestAnimationFrame(loop);
           }, fadeValue2! * 6000);
         }
-      }
+      };
       requestAnimationFrame(loop);
     }
     else if (backgroundImageFileFadeType === 2) {
@@ -115,7 +115,7 @@ export function BackgroundHandle(
             requestAnimationFrame(loop);
           }, fadeValue2! * 6000);
         }
-      }
+      };
       requestAnimationFrame(loop);
     }
     else if (backgroundImageFileFadeType === 3) {
