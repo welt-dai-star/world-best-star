@@ -1,13 +1,13 @@
 import {CharacterMotion, EpisodeUnit} from "../../../types/common";
 import { useResourceStore } from "../../../store/resource";
-
+import { BackgroundHandle } from "./backgroundLayer";
 export class EpisodeParser {
   constructor(episode: EpisodeUnit[]) {
     this.episode = episode;
     this.nowPlaying = 0;
     this.SpineHandle = ()=> {};
     this.TextHandle = ()=> {};
-    this.BackgroundHandle = ()=>{};
+    this.BackgroundHandle = BackgroundHandle;
     this.BGMHandle = ()=>{};
     this.SEHandle = ()=>{};
     this.VoiceHandle = ()=>{};

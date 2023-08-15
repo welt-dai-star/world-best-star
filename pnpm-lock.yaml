@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@pixi/filter-alpha':
+    specifier: 6.5.10
+    version: 6.5.10(@pixi/core@6.5.10)
   naive-ui:
     specifier: ^2.34.4
     version: 2.34.4(vue@3.3.4)
