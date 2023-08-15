@@ -89,6 +89,10 @@ export const useResourceStore = defineStore({
         const loader = new PIXI.Loader();
         loader.add(backgroundId, url).load((_, resources) => {
           const sprite = new PIXI.Sprite(resources[backgroundId].texture!);
+          sprite.width = window.innerWidth * 1.25 * window.devicePixelRatio;
+          sprite.height = window.innerWidth * 1.25 * window.devicePixelRatio * configStore.getRatio;
+          sprite.x = -sprite.width * 0.125;
+          sprite.y = -sprite.height * 0.125;
           this.spriteMap[backgroundId] = sprite;
           console.log(`Sprite "${backgroundId}" loaded`);
           this.FinishMission();

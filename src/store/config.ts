@@ -8,6 +8,7 @@ export const useConfigStore = defineStore({
     cdn:"https://wds-1309483543.cos.ap-beijing.myqcloud.com/cdn",
     language: "chs" as "chs" | "cht" | "eng" | "jpn",
     page:"/",
+    ratio:(9 / 16),
     // game
     appWidth: window.innerWidth * 0.7,
     // dev  
@@ -23,6 +24,9 @@ export const useConfigStore = defineStore({
     },
     getBaseUrl(): string {
       return this.cdn;
+    },
+    getRatio(): number {
+      return this.ratio;
     },
     // game
     getAppWidth(): number {
