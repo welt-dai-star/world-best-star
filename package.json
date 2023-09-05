@@ -12,13 +12,11 @@
     "publish": "git clone https://github.com/welt-dai-star/welt-dai-star.github.io.git && mkdir dist/.git && cp -r welt-dai-star.github.io/.git dist && rm -rf welt-dai-star.github.io && cd dist && git add . && git commit -m 'update' && git push"
   },
   "dependencies": {
-    "@pixi/filter-alpha": "6.5.10",
+    "@esotericsoftware/spine-phaser": "~4.1.0",
     "naive-ui": "^2.34.4",
+    "phaser": "^3.60.0",
     "pinia": "^2.1.6",
-    "pixi-spine": "3.1.2",
-    "pixi.js": "6.5.10",
     "sass": "^1.65.1",
-    "three": "^0.155.0",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"
   },

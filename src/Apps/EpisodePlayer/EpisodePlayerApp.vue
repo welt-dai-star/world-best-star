@@ -1,18 +1,21 @@
 <template>
-    <n-button 
-        v-if="configStore.getExampleState" 
-        :on-click="loadSpine" 
-        :disabled="!resourceStore.allMissionFinished">加载Spine</n-button>
-    <div id="spine_layer" style=""></div>
+    <div id="phaser_canvas">
+    <n-button :on-click="loadSpine">示例用</n-button></div>
 </template>
 <script setup lang="ts">
 import { NButton } from "naive-ui";
-import {loadSpine} from "./layers/spineLoader";
-import { useConfigStore } from "../../store/config";
-import { useResourceStore } from "../../store/resource";
-const configStore = useConfigStore();
-const resourceStore = useResourceStore();
-configStore.exampleStart = true;
+import {app} from "./layers/GameManager";
+function loadSpine() {
+  document.getElementById("phaser_canvas")?.appendChild(app.canvas);
+  app.canvas.style.display = "block";
+  app.canvas.requestFullscreen();
+  
+}
 </script>
 <style scoped lang="scss">
+#phaser_canvas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 </style>

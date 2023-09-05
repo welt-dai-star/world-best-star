@@ -5,13 +5,13 @@ export const useConfigStore = defineStore({
   id: "config",
   state: () => ({
     // global
-    cdn:"https://wds-1309483543.cos.ap-beijing.myqcloud.com/cdn",
+    cdn: "https://wds-1309483543.cos.ap-beijing.myqcloud.com/cdn",
     language: "chs" as "chs" | "cht" | "eng" | "jpn",
-    page:"/",
-    ratio:(9 / 16),
+    page: "/",
+    ratio: 9 / 16,
     // game
     appWidth: window.innerWidth * 0.7,
-    // dev  
+    // dev
     exampleStart: true,
   }),
   getters: {
@@ -39,7 +39,12 @@ export const useConfigStore = defineStore({
   },
   actions: {
     setLanguage(language: string) {
-      if (language !== "chs" && language !== "cht" && language !== "jpn" && language !== "eng") {
+      if (
+        language !== "chs" &&
+        language !== "cht" &&
+        language !== "jpn" &&
+        language !== "eng"
+      ) {
         throw new Error("Invalid language");
       }
       this.language = language;
@@ -47,10 +52,19 @@ export const useConfigStore = defineStore({
     setPage(page: string) {
       this.page = page;
     },
-    getSpineUrlById(spineId:string) :string{
-      return `${this.cdn}/CharacterStands/${spineId}.skel`;
+    getSpineUrlById(spineId: number): string[] {
+      return [
+        `${this.cdn}/CharacterStands/${spineId}.skel`,
+        `${this.cdn}/CharacterStands/${spineId}.atlas`,
+      ];
     },
-    getEpisodeUrlById(EpisodeId:string): string{
+    getBackgroundUrlById(spineId: number): string[] {
+      return [
+        `${this.cdn}/CharacterStands/${spineId}.skel`,
+        `${this.cdn}/CharacterStands/${spineId}.atlas`,
+      ];
+    },
+    getEpisodeUrlById(EpisodeId: string): string {
       return `${this.cdn}/episode/${EpisodeId}.json`;
     },
   },
